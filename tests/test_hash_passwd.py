@@ -3,7 +3,7 @@ import hash_passwd
 import unittest
 
 
-class TestHash(unittest.TestCase):
+class testHash(unittest.TestCase):
     def setUp(self) -> None:
         self.raw_passwd = 'passwd@1234'
         self.passwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
