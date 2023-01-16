@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 
-import hash_passwd
+from utilities import hash_passwd
 from schemas import userBase
 from db.models import DBUser
-from hash_passwd import bcrypt_passwd, verify
+from utilities.hash_passwd import bcrypt_passwd
 from fastapi import HTTPException, status
 
 

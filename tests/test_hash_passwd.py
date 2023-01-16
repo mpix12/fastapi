@@ -1,5 +1,5 @@
 from passlib.context import CryptContext
-import hash_passwd
+from utilities import hash_passwd
 import unittest
 
 
@@ -14,9 +14,4 @@ class testHash(unittest.TestCase):
 
     def test_bcrypt_passwd(self):
         self.assertNotEqual(self.passwd, hash_passwd.bcrypt_passwd(self.raw_passwd))
-
-
-if "__name__" == "__main__":
-    unittest.run()
-
 
