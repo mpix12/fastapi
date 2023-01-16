@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 
-import Hash
+import hash_passwd
 from schemas import userBase
 from db.models import DBUser
-from Hash import bcrypt_passwd, verify
+from hash_passwd import bcrypt_passwd, verify
 from fastapi import HTTPException, status
 
 
@@ -62,7 +62,7 @@ def updated_user(db: Session, id: int, request: userBase):
     temp_dict = {
         DBUser.username: request.username,
         DBUser.email: request.email,
-        DBUser.passwd: Hash.bcrypt_passwd(request.passwd)
+        DBUser.passwd: hash_passwd.bcrypt_passwd(request.passwd)
     }
     ext_user = db.query(DBUser).filter(DBUser.id == id)
     ext_user.update(temp_dict)

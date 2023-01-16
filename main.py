@@ -75,4 +75,3 @@ user.py : API Functionality.
 Relationship DB:
 Instead of writing joins and use in the query: We can define the db relationships. 
 '''
-

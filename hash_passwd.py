@@ -1,8 +1,9 @@
-from passlib.context import CryptContext
-
 """
 Utility to decrypt and verify plain text password
 """
+
+from passlib.context import CryptContext
+
 passwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
