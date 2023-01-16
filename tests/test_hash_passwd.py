@@ -19,3 +19,6 @@ class testHash(unittest.TestCase):
 
     def test_bcrypt_passwd(self):
         self.assertNotEqual(self.passwd, hash_passwd.bcrypt_passwd(self.raw_passwd))
+
+
+unittest.run()
