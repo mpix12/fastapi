@@ -2,7 +2,7 @@ from passlib.context import CryptContext
 import unittest
 import sys
 
-from utilities import hash_passwd
+# from utilities import hash_passwd
 
 sys.path.insert(0, '/var/jenkins_home/workspace/python\ build\ and\ test\ demo/utilities/hash_passwd')
 # from utilities.hash_passwd import bcrypt_passwd
