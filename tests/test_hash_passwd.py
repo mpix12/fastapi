@@ -1,11 +1,6 @@
 from passlib.context import CryptContext
 import unittest
-import sys
-
-# from utilities import hash_passwd
-
-sys.path.insert(0, '/var/jenkins_home/workspace/python\ build\ and\ test\ demo/utilities/hash_passwd')
-# from utilities.hash_passwd import bcrypt_passwd
+from utilities import hash_passwd
 
 
 class testHash(unittest.TestCase):
@@ -20,5 +15,3 @@ class testHash(unittest.TestCase):
     def test_bcrypt_passwd(self):
         self.assertNotEqual(self.passwd, hash_passwd.bcrypt_passwd(self.raw_passwd))
 
-
-unittest.main()

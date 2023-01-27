@@ -4,9 +4,12 @@ from routers import blog_post
 from routers import user
 from routers import article
 from routers import product
+from routers import blob_file
+
 from db import models
 from db import database
 from auth import authentication
+from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
@@ -16,12 +19,16 @@ app.include_router(user.router)
 app.include_router(article.router)
 app.include_router(product.router)
 app.include_router(authentication.router)
+app.include_router(blob_file.router)
 
 
 @app.get('/blog')
 def index(inject_dependency: dict = Depends(blog_post.required_functionality)):
     return {"message": f"Hello World, Injected dependency {inject_dependency}"}
 
+
+# Files statically available:
+app.mount('/media', StaticFiles(directory="media"), name='media')
 
 models.Base.metadata.create_all(database.engine)
 
